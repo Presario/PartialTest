@@ -7,24 +7,30 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<form method="post">
+<form method="post" class="col-4">
     <div>
         <p>This is main page.</p> <br />
-        @await Html.PartialAsync("XTags", Model)
+
+        <partial name="XTags" model=Model />       @*@await Html.PartialAsync("XTags", Model)*@
     </div>
+
     <input type="hidden" name="temp" id="temp" />
     <input type="submit" id="submit"/>
+    
 </form>
 
-<script>
-    $(document).ready(function () {
-        $("#submit").click(function () {
-            var x = "";
-            $(".label").each(function () { x += $(this).attr("item-data") })
-            $("#temp").val(x);
-        });       
-    });
-</script>
+@section Scripts{ 
+    <script>
+        $(document).ready(function () {
+            $("#submit").click(function () {
+                var x = "";
+                $(".btn").each(function () { x += $(this).attr("item-data") })
+                $("#temp").val(x);
+            });
+        });
+    </script>
+}
+
 
 
 
