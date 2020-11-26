@@ -3,12 +3,16 @@
 @{
     Layout = "_LayoutWithVue";
 }
-<p>
-    {{ hello }}
-</p>
+<form method="post">
+    <input v-model="hello" placeholder="..." />
+    Message:{{ hello }}
+</form>
+
 <p>
     {{ bello }}
 </p>
+
+
 
 @section Scripts{
     <script language="javascript">
